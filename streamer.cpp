@@ -351,7 +351,7 @@ void task_image_processing(void* ptr_data) {
                 printf("%f fps\n", fps_avg());
             }
 
-            usleep(40000);
+            usleep(10000);
         } catch (exception& err) {
             printf("ERROR : %s\n", err.what());
         }
