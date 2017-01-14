@@ -17,7 +17,7 @@
 //opencv lib
 #include <opencv2/opencv.hpp>
 
-//mongoose
+//mongoose library
 #include "mongoose.h"
 
 //thread pool
