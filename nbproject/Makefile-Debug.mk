@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/mongoose.o \
-	${OBJECTDIR}/streamer.o \
+	${OBJECTDIR}/streamer_rpicam.o \
 	${OBJECTDIR}/thpool.o
 
 
@@ -54,25 +54,25 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lrt -lpthread -lcrypto -lssl
+LDLIBSOPTIONS=-L/opt/vc/lib -lpthread -lrt -lssl -lcrypto -lraspicam -lraspicam_cv -lmmal -lmmal_core -lmmal_util
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer_raspicam
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer_raspicam: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer_raspicam ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/mongoose.o: mongoose.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mongoose.o mongoose.c
 
-${OBJECTDIR}/streamer.o: streamer.cpp 
+${OBJECTDIR}/streamer_rpicam.o: streamer_rpicam.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/streamer.o streamer.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/streamer_rpicam.o streamer_rpicam.cpp
 
 ${OBJECTDIR}/thpool.o: thpool.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -85,7 +85,7 @@ ${OBJECTDIR}/thpool.o: thpool.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv_web_streamer_raspicam
 
 # Subprojects
 .clean-subprojects:

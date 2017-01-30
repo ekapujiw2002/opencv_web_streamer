@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=opencv_web_streamer
+PROJECTNAME=opencv_web_streamer_raspicam
 
 # Active Configuration
 DEFAULTCONF=Debug

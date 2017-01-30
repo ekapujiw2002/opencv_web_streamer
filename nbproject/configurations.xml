@@ -16,7 +16,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>mongoose.c</itemPath>
-      <itemPath>streamer.cpp</itemPath>
+      <itemPath>streamer_rpicam.cpp</itemPath>
       <itemPath>thpool.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -47,11 +47,19 @@
           <commandLine>`pkg-config --cflags --libs opencv`</commandLine>
         </ccTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>/opt/vc/lib</pElem>
+          </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>rt</linkerLibLibItem>
             <linkerLibLibItem>pthread</linkerLibLibItem>
-            <linkerLibLibItem>crypto</linkerLibLibItem>
+            <linkerLibLibItem>rt</linkerLibLibItem>
             <linkerLibLibItem>ssl</linkerLibLibItem>
+            <linkerLibLibItem>crypto</linkerLibLibItem>
+            <linkerLibLibItem>raspicam</linkerLibLibItem>
+            <linkerLibLibItem>raspicam_cv</linkerLibLibItem>
+            <linkerLibLibItem>mmal</linkerLibLibItem>
+            <linkerLibLibItem>mmal_core</linkerLibLibItem>
+            <linkerLibLibItem>mmal_util</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -61,7 +69,7 @@
       </item>
       <item path="mongoose.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="streamer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="streamer_rpicam.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="thpool.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -77,11 +85,19 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
           <commandLine>`pkg-config --cflags --libs opencv`</commandLine>
+          <preprocessorList>
+            <Elem>_GLIBCXX_USE_CXX11_ABI=0</Elem>
+          </preprocessorList>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
           <commandLine>`pkg-config --cflags --libs opencv`</commandLine>
+          <preprocessorList>
+            <Elem>_GLIBCXX_USE_CXX11_ABI=0</Elem>
+          </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -90,12 +106,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>/opt/vc/lib</pElem>
+          </linkerAddLib>
+          <commandlineTool>g++ </commandlineTool>
           <linkerLibItems>
-            <linkerLibLibItem>rt</linkerLibLibItem>
             <linkerLibLibItem>pthread</linkerLibLibItem>
-            <linkerLibLibItem>crypto</linkerLibLibItem>
+            <linkerLibLibItem>rt</linkerLibLibItem>
             <linkerLibLibItem>ssl</linkerLibLibItem>
+            <linkerLibLibItem>crypto</linkerLibLibItem>
           </linkerLibItems>
+          <commandLine>`pkg-config --cflags --libs opencv`</commandLine>
         </linkerTool>
       </compileType>
       <item path="fps_counter.h" ex="false" tool="3" flavor2="0">
@@ -104,7 +125,7 @@
       </item>
       <item path="mongoose.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="streamer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="streamer_rpicam.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="thpool.c" ex="false" tool="0" flavor2="0">
       </item>
