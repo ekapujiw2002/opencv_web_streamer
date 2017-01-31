@@ -54,7 +54,8 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/opt/vc/lib -lpthread -lrt -lssl -lcrypto -lraspicam -lraspicam_cv -lmmal -lmmal_core -lmmal_util
+#LDLIBSOPTIONS=-L/opt/vc/lib -lpthread -lrt -lssl -lcrypto -lraspicam -lraspicam_cv -lmmal -lmmal_core -lmmal_util
+LDLIBSOPTIONS=-L/opt/vc/lib -lpthread -lrt -lssl -lcrypto
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
